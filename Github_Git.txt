@@ -1,0 +1,23 @@
+
+git config --global user.name "github username"
+git config --global user.email "yourmail@example.com associated to github"
+
+ssh-keygen -t rsa -b 4096 -C "yourmail@example.com associated to github"
+
+press enter and follow instructions
+
+
+
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+
+cat ~/.ssh/id_rsa.pub
+and copy code
+
+So go to github and log in
+
+Press profile and settings, go to SSH and GPG keys 
+
+press New SSH key bottom
+
+write a title for key and in key paste code from ~/.ssh/id_rsa.pub and press add ssh key.

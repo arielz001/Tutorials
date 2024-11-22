@@ -1,0 +1,47 @@
+tutorial by:   https://phoenixnap.com/kb/install-zsh-ubuntu
+	
+	installing sh 
+sudo apt install zsh -y
+
+zsh
+
+press keys: 1 2 0 q 
+
+chsh -s $(which zsh)
+
+
+installing oh my zsh
+
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+ls
+nano ~/.zshrc  
+
+2. Locate the following line:
+
+ZSH_THEME="robbyrussell"
+and change theme to "agnoster"  (nano save: CTRL+O   nano exit: CTRL+X)
+
+
+then, close terminal, open a new terminal, and follow next steps>
+
+nano .bashrc 
+on final line add: exec zsh
+zsh
+
+
+installing fonts for symbols
+
+sudo apt install fontconfig
+cd ~
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+mkdir -p .local/share/fonts
+unzip Meslo.zip -d .local/share/fonts
+cd .local/share/fonts
+rm *Windows*
+cd ~
+rm Meslo.zip
+fc-cache -fv
+
+On terminal 
+go to preferences. go to profiles, activate custom font and select MesloLGS Nerd Font
+

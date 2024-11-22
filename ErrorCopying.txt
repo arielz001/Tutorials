@@ -1,0 +1,1 @@
+echo vm.dirty_bytes=15000000 | sudo tee -a /etc/sysctl.conf
