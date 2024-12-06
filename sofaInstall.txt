@@ -80,7 +80,7 @@ press generate
 
 
 4.3 Plugins install
-On cmake-gui windows (if you don't close it, on the other hand, you may execute cmake-gui ../src/ again)
+On cmake-gui window (if you don't close it, on the other hand, you may execute cmake-gui ../src/ again)
 On search write external and on sofa external directories add following paths (replacing $USER$ for you username:
 /home/$USER$/Repos/sofa/plugins/BeamAdapter;/home/$USER$/Repos/sofa/plugins/SofaPython3;/home/$USER$/Repos/sofa/plugins/SoftRobots;/home/$USER$/Repos/sofa/plugins/SoftRobots.Inverse;
 	
