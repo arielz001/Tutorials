@@ -1,0 +1,102 @@
+1. Create a Catkin workspace:
+
+If you don't already have a Catkin workspace, create one with the following commands:
+
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin_init_workspace
+cd ~/catkin_ws
+catkin_make
+
+2. Create a package in the workspace:
+
+To create a package named my_package with basic dependencies, use:
+And my_package only must have lower letters
+cd ~/catkin_ws/src
+catkin_create_pkg my_package std_msgs rospy roscpp sensor_msgs
+
+3. Create the C++ node:
+
+Create my_node.cpp in the src directory:
+
+cd ~/catkin_ws/src/my_package/src
+touch my_node.cpp
+
+4. Edit the my_node.cpp file to include the following example code:
+
+#include "ros/ros.h"
+#include "std_msgs/String.h"
+
+int main(int argc, char **argv)
+{
+  // Initialize the node
+  ros::init(argc, argv, "talker");
+  ros::NodeHandle n;
+
+  // Publisher that will publish to the 'chatter' topic
+  ros::Publisher pub = n.advertise<std_msgs::String>("chatter", 1000);
+
+  // Publication frequency
+  ros::Rate loop_rate(10);  // 10 Hz
+
+  while (ros::ok())
+  {
+    std_msgs::String msg;
+    msg.data = "Hello ROS " + std::to_string(ros::Time::now().toSec());
+
+    // Print the message to the console
+    ROS_INFO("%s", msg.data.c_str());
+
+    // Publish the message
+    pub.publish(msg);
+
+    // Allow the execution of other nodes
+    ros::spinOnce();
+
+    // Control the loop execution rate
+    loop_rate.sleep();
+  }
+
+  return 0;
+}
+
+5. Modify the CMakeLists.txt file:
+
+To compile the node in C++, ensure that the CMakeLists.txt is set up correctly.
+
+Open the CMakeLists.txt file in your package directory (~/catkin_ws/src/my_package/CMakeLists.txt) and make sure it contains these lines:
+
+cmake_minimum_required(VERSION 3.0.2)
+project(my_package)
+
+# Find dependencies
+find_package(OpenCV REQUIRED)
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  sensor_msgs
+  cv_bridge
+)
+
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES my_package
+  CATKIN_DEPENDS roscpp sensor_msgs cv_bridge
+)
+
+include_directories(
+  ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
+)
+
+add_executable(talker src/talker_node.cpp)
+target_link_libraries(my_package ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
+6. Compile
+
+cd ~/catkin_ws
+catkin_make
+
+6. Using
+
+source devel/setup.zsh
+rosrun my_package talker

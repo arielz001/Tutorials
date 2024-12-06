@@ -1,0 +1,6 @@
+1. See resoltution
+
+v4l2-ctl -d /dev/video0 --list-formats-ext
+
+2. Change resolution
+v4l2-ctl -d /dev/video0 --set-fmt-video=width=1280,height=720,pixelformat=YUYV
