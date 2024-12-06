@@ -94,7 +94,8 @@ On terminal(build dir):  ninja
 
 Finally, on nano ~/.bashrc (~/.zshrc) write
 
-alias runSofa="/home/$USER$/Repos/sofa/build/bin/runSofa"
+alias runSofa="/home/$USER$/Repos/sofa/build/bin/runSofa"  ($USER$ you write your user)
+the, source ~/.bashrc (~/.zshrc)
 
 write runSofa on terminal.
 
