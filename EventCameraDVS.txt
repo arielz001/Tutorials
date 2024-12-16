@@ -1,0 +1,14 @@
+1. Install ROS dependencies:
+sudo apt-get install ros-noetic-camera-info-manager
+sudo apt-get install ros-noetic-image-view
+
+2. DVprocessing install
+sudo add-apt-repository ppa:inivation-ppa/inivation
+sudo apt-get update
+sudo apt-get install dv-processing
+
+3. Libcaer
+sudo apt-get install libcaer-dev
+
+4. Catkin tools
+sudo apt-get install python3-catkin-tools
