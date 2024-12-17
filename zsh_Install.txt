@@ -25,10 +25,8 @@ source ~/.zshrc
 
 nano ~/.bashrc 
 on final line add: exec zsh
-zsh
 
-
-installing fonts for symbols
+3. installing fonts for symbols
 
 sudo apt install fontconfig
 cd ~
