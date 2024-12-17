@@ -21,10 +21,9 @@ nano ~/.zshrc
 ZSH_THEME="robbyrussell"
 and change theme to "agnoster"  (nano save: CTRL+O   nano exit: CTRL+X)
 
+source ~/.zshrc  
 
-then, close terminal, open a new terminal, and follow next steps>
-
-nano .bashrc 
+nano ~/.bashrc 
 on final line add: exec zsh
 zsh
 
