@@ -36,16 +36,18 @@ sudo apt install libboost-all-dev
 10. Install pip dependencies 
 sudo apt install python3-dev pybind11-dev 
 
+11. install g++
+sudo apt install gcc-11 g++-11
 
 curl -L https://bootstrap.pypa.io/pip/get-pip.py --output /tmp/get-pip3.py \
 && python3.10 /tmp/get-pip3.py \
 && python3.10 -m pip install --upgrade pip \
 && python3.10 -m pip install numpy scipy pybind11==2.9.1
 
-11. Additional libraries: libPNG, libJPEG, libTIFF, Glew, Zlib
+12. Additional libraries: libPNG, libJPEG, libTIFF, Glew, Zlib
 sudo apt install libpng-dev libjpeg-dev libtiff-dev libglew-dev zlib1g-dev
 
-12. Install Eigen (>= 3.2.10)
+13. Install Eigen (>= 3.2.10)
 sudo apt install libeigen3-dev
 
 

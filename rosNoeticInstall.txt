@@ -26,3 +26,5 @@ sudo apt install python3-rosdep
 sudo rosdep init
 rosdep update
 
+6) if you have anaconda (optional)
+echo "alias catkin_make='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3'" >> ~/.zshrc   (or bashrc)

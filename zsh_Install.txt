@@ -12,8 +12,8 @@ chsh -s $(which zsh)
 
 installing oh my zsh
 
+sudo apt install git
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
-ls
 nano ~/.zshrc  
 
 2. Locate the following line:
@@ -21,15 +21,12 @@ nano ~/.zshrc
 ZSH_THEME="robbyrussell"
 and change theme to "agnoster"  (nano save: CTRL+O   nano exit: CTRL+X)
 
+source ~/.zshrc  
 
-then, close terminal, open a new terminal, and follow next steps>
-
-nano .bashrc 
+nano ~/.bashrc 
 on final line add: exec zsh
-zsh
 
-
-installing fonts for symbols
+3. installing fonts for symbols
 
 sudo apt install fontconfig
 cd ~
