@@ -1,0 +1,49 @@
+sudo apt-get install \
+    git \
+    cmake \
+    ninja-build \
+    build-essential \
+    libboost-program-options-dev \
+    libboost-graph-dev \
+    libboost-system-dev \
+    libeigen3-dev \
+    libflann-dev \
+    libfreeimage-dev \
+    libmetis-dev \
+    libgoogle-glog-dev \
+    libgtest-dev \
+    libgmock-dev \
+    libsqlite3-dev \
+    libglew-dev \
+    qtbase5-dev \
+    libqt5opengl5-dev \
+    libcgal-dev \
+    libceres-dev \ 
+    nvidia-cuda-toolkit \
+    nvidia-cuda-toolkit-gcc
+    
+git clone https://github.com/colmap/colmap.git
+cd colmap
+
+go to https://gitlab.com/libeigen/eigen/-/releases/3.3.7 and download Source code zip, then extract and copy to colmap directory
+
+then, in colmap directory,
+
+cd eigen-3.3.7
+mkdir build
+cd build
+cmake ..
+sudo make install
+
+cd ..
+
+modify cmakelists.txt adding next line. 
+set(CMAKE_CUDA_ARCHITECTURES 50 60 70) 
+
+
+mkdir build
+cd build
+cmake .. -GNinja
+ninja
+sudo ninja install
+
