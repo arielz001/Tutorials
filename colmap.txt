@@ -43,7 +43,7 @@ set(CMAKE_CUDA_ARCHITECTURES 50 60 70)
 
 mkdir build
 cd build
-cmake .. -GNinja
+cmake .. -GNinja -DCMAKE_CUDA_ARCHITECTURES=86  (dependiendo de la capacidad de la gpu, la 3060 es 86 por ejemplo)
 ninja
 sudo ninja install
 
