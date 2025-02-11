@@ -47,3 +47,9 @@ cmake .. -GNinja
 ninja
 sudo ninja install
 
+
+
+
+##################### THIS WORK BETTER ##################
+conda install -c conda-forge colmap=3.8
+
