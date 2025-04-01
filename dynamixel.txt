@@ -1,0 +1,19 @@
+1. Download Dynamixel Wizard 2.0
+
+2. Give permisssion 
+
+sudo chmod 666 /dev/ttyUSB0
+
+3. For each dynamixel motor repeat
+
+    3.1 Connect usb cable to u2d2 
+
+    3.2 Open dynamixel wizard and press scan
+
+    3.3 set an own ID to each one
+
+4. when each dynamixel motor is setted up, you can connect all of them to the computer in serie 
+
+5. Activate Torque and you can move the motors
+
+
