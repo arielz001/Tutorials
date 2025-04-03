@@ -1,0 +1,19 @@
+1. install powerlevel10k and configure
+
+2. https://github.com/sharkdp/bat download  bat_0.25.0_amd64.deb on releases
+	2.1 install with dpkg -i bat_0.25.0_amd64.deb
+
+3. add alias in .zshrc
+
+alias ll='lsd -lh --group-dirs=first'
+alias la='lsd -a --group-dirs=first'
+alias l='lsd --group-dirs=first'
+alias lla='lsd -lha --group-dirs=first'
+alias ls='lsd --group-dirs=first'
+alias cat='/bin/bat'
+alias catn='/bin/cat'
+alias catnl='/bin/bat --paging=never'
+
+3. https://github.com/lsd-rs/lsd and install last version in releases with dpkg -i
+
+4. https://github.com/junegunn/fzf and install last version in releases with dpkg -i
