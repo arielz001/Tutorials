@@ -1,0 +1,28 @@
+1. clone repo
+git clone https://github.com/prophesee-ai/openeb.git --branch 5.1.0
+
+2. install dependencies
+sudo apt update
+sudo apt -y install apt-utils build-essential software-properties-common wget unzip curl git cmake
+sudo apt -y install libopencv-dev libboost-all-dev libusb-1.0-0-dev libprotobuf-dev protobuf-compiler
+sudo apt -y install libhdf5-dev hdf5-tools libglew-dev libglfw3-dev libcanberra-gtk-module ffmpeg
+
+    2.1 Optionally, if you want to run the tests, you need to install Google Gtest and Gmock packages. For more details, see Google Test User Guide :
+
+    sudo apt -y install libgtest-dev libgmock-dev
+
+3. export PYTHONNOUSERSITE=true
+
+4. go to openeb folder and 
+pip install -r utils/python/requirements_openeb.txt
+
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+
+5. in bashrc/zshrc add the following lines
+export HDF5_PLUGIN_PATH=$HDF5_PLUGIN_PATH:/usr/lib/x86_64-linux-gnu/hdf5/plugins
+export LD_PRELOAD=/lib/x86_64-linux-gnu/libgcc_s.so.1
+export PYTHONPATH=$PYTHONPATH:/home/ariel/GithubRepos/openeb/
+
