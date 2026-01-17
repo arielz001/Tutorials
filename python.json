@@ -12,7 +12,7 @@
     },
 
     "if": {
-        "prefix": "if",
+        "prefix": "iff",
         "body": ["if $1:", "    $2"],
         "description": "if statement"
     },
@@ -24,31 +24,31 @@
     },
 
     "for": {
-        "prefix": "for",
+        "prefix": "fr",
         "body": ["for $1 in $2:", "    $3"],
         "description": "for loop"
     },
 
     "for range": {
-        "prefix": "fori",
+        "prefix": "fra",
         "body": ["for i in range($1):", "    $2"],
         "description": "for i in range"
     },
 
     "while": {
-        "prefix": "while",
+        "prefix": "whl",
         "body": ["while $1:", "    $2"],
         "description": "while loop"
     },
 
     "def": {
-        "prefix": "def",
+        "prefix": "df",
         "body": ["def $1($2):", "    $3"],
         "description": "function"
     },
 
     "class": {
-        "prefix": "class",
+        "prefix": "cls",
         "body": [
             "class $1:",
             "    def __init__(self, $2):",
@@ -58,7 +58,7 @@
     },
 
     "main": {
-        "prefix": "main",
+        "prefix": "mn",
         "body": ["if __name__ == \"__main__\":", "    $1"],
         "description": "main guard"
     },
